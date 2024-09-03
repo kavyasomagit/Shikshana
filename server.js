@@ -7,6 +7,7 @@ const profileDataAddedTotheRouter = require('./routes/dataimport.route');
 const SingleProfileRouter = require('./routes/Singleprofile.route');
 const FilteredProfiles = require('./routes/filter.route');
 const userDetail = require('./routes/user.route');
+const WishList = require('./routes/wishList.route');
 
 
 const connectDB = require('./config/dbconfig');
@@ -29,6 +30,7 @@ app.use('/api/profiles', profileroute);
 app.use('/api/SingleProfile', SingleProfileRouter);
 app.use('/api/filter',FilteredProfiles );
 app.use('/api/auth', userDetail);
+app.use('/api/wishList', WishList);
 
 
 mongoose.connection.once("open", () => {

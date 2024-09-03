@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 const profileSchema = new mongoose.Schema({
-            // id: {type:String, required : true},
+            //id: {type:String, required : true},
+			loginAs: {type:String, required : true},
+			password: {type:String, required: true},
 			Category: {type:String, required : true},
 			Name: {type:String, required : true},
 			Address: {type:String, required : true},
@@ -12,7 +14,10 @@ const profileSchema = new mongoose.Schema({
 			ImgArr: {type:Array, required : true},
 			ContactNumber: {type:String, required : true},
 			ContactMail: {type:String, required : true},
-			Course: {type:String, required : true}
+			Course: [{
+				Class: { type: String, required: true },
+				Subject: { type: String, required: true }
+			}]
 })
 
 
